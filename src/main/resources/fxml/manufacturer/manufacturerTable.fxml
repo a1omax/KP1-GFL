@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="442.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gfl.kp1.controllers.manufacturer.ManufacturerTableController">
+    <children>
+      <FlowPane prefHeight="516.0" prefWidth="1060.0">
+         <children>
+              <VBox prefHeight="391.0" prefWidth="200.0">
+                  <children>
+                      <Label alignment="CENTER" prefHeight="25.0" prefWidth="209.0" text="Options" />
+                      <Button mnemonicParsing="false" onAction="#onClickLoadAllButton" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: #9fc5e8;" text="Load All" textFill="#615656">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                      <Button fx:id="deleteItemButton" mnemonicParsing="false" onMouseClicked="#onClickDeleteItemButton" prefHeight="39.0" prefWidth="215.0" style="-fx-background-color: #fb3310;" text="Delete item" textFill="#cdc6c6">
+                          <font>
+                              <Font name="System Bold" size="18.0" />
+                          </font>
+                      </Button>
+                  <Button fx:id="updateItemButton" mnemonicParsing="false" onMouseClicked="#showUpdateItemPopup" prefHeight="42.0" prefWidth="202.0" style="-fx-background-color: #ffff00;" text="Update item">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="createItemButton" mnemonicParsing="false" onMouseClicked="#showCreateItemPopup" prefHeight="44.0" prefWidth="214.0" style="-fx-background-color: #0fff0f;" text="Create item">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  </children>
+              </VBox>
+              <TableView fx:id="tableView" onMouseClicked="#handleTableViewClicked" prefHeight="516.0" prefWidth="605.0">
+                  <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                      <TableColumn fx:id="countryColumn" prefWidth="75.0" text="Country" />
+                  </columns>
+              </TableView>
+            <!--<AnchorPane fx:id="filterPane" prefHeight="439.0" prefWidth="227.0">
+               <children>
+                  <Label layoutX="73.0" layoutY="1.0" text="FILTERS">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="maxPriceSlider" layoutX="20.0" layoutY="28.0" max="10000.0" prefHeight="14.0" prefWidth="190.0" />
+                  <Label layoutX="19.0" layoutY="46.0" />
+                  <TextField fx:id="maxPriceField" layoutX="134.0" layoutY="42.0" prefHeight="25.0" prefWidth="73.0" />
+                  <TextField fx:id="yearTextField" layoutX="134.0" layoutY="87.0" prefHeight="7.0" prefWidth="73.0" />
+                  <CheckBox fx:id="yearCheckBox" layoutX="23.0" layoutY="91.0" mnemonicParsing="false" text="Year:" />
+                  <CheckBox fx:id="maxPriceCheckBox" layoutX="23.0" layoutY="46.0" mnemonicParsing="false" text="Max price:" />
+                  <ComboBox fx:id="souvenirTypeComboBox" layoutX="128.0" layoutY="175.0" onShowing="#onShowingSouvenirTypeComboBox" prefHeight="25.0" prefWidth="83.0" />
+                  <CheckBox fx:id="souvenirTypeCheckBox" layoutX="21.0" layoutY="179.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="98.0" text="SouvenirType:" />
+                  <CheckBox fx:id="countryCheckBox" layoutX="21.0" layoutY="225.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="98.0" text="Country:" />
+                  <ComboBox fx:id="countryComboBox" layoutX="128.0" layoutY="221.0" onShowing="#onShowingCountryComboBox" prefHeight="25.0" prefWidth="83.0" />
+                  <Button fx:id="loadWithFiltersButton" layoutX="33.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#onClickLoadWithFilterButton" text="Load with filters">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>-->
+         </children>
+      </FlowPane>
+    </children>
+</AnchorPane>
