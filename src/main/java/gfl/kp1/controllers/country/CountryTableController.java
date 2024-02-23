@@ -4,7 +4,7 @@ import gfl.kp1.controllers.TableController;
 import gfl.kp1.controllers.popups.CountryPopupFactory;
 import gfl.kp1.data.Country;
 import gfl.kp1.models.countryTable.CountryTableModel;
-import gfl.kp1.repositories.CountryRepository;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;

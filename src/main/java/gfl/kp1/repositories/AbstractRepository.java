@@ -9,13 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.net.URL;
 import java.util.*;
 
 @Slf4j
 public abstract class AbstractRepository<T extends Data> {
 
     private static final Gson gson = new Gson();
-    private static final String BASE_FILE_PATH = "src/main/resources/data";
     protected static final String FILE_EXT = ".json";
     protected List<T> dataList = new ArrayList<>();
 
@@ -38,13 +38,10 @@ public abstract class AbstractRepository<T extends Data> {
     }
 
     protected File getDataFile() throws IOException {
-        File file = new File(BASE_FILE_PATH, getFileName()+FILE_EXT);
-        if (!file.exists()){
-            file.getParentFile().mkdirs();
-            file.createNewFile();
-        }
+        URL resourceUrl = AbstractRepository.class.getResource("/data/" + getFileName() + FILE_EXT);
 
-        return file;
+
+        return new File(resourceUrl.getFile());
     }
 
     public boolean saveData(){
